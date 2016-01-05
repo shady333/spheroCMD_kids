@@ -12,7 +12,7 @@ namespace SpheroTest
 {
     class Program
     {
-
+              
         private static IEnumerable<string> GetOrbBasicLinesFromFile(string filePath)
         {
             var rawLines = File.ReadLines(filePath, Encoding.UTF8);
@@ -147,6 +147,12 @@ namespace SpheroTest
                     case "help":
                         Console.WriteLine("HELP will be realized soon.");
                         break;
+                    case "goForward":
+                        if (parameters.Length < 3) break;
+                        ChangeColor(sphero, "Red");
+                        GoForward(sphero, Byte.Parse(parameters[1]), int.Parse(parameters[2]));
+                        break;
+
                     default:
                         Console.WriteLine("Unknown command. Please type 'help' for getting list of available commands.");
                         break;
@@ -157,6 +163,19 @@ namespace SpheroTest
         }
 
         /* Next block should be moved later */
+
+        public static void GoForward(Sphero sphero, byte speed, int duration)
+        {
+            var programLines = new List<string>();
+            programLines.Add("10 goroll 0, "+speed+", 2\r");
+            programLines.Add("20 delay "+duration+"\r");
+            programLines.Add("30 goroll 0, 0, 0\r");
+
+            var area = StorageArea.Temporary;
+            sphero.EraseOrbBasicStorage(area);
+            sphero.SendOrbBasicProgram(area, programLines);
+            sphero.ExecuteOrbBasicProgram(area, 10);
+        }
 
         public static void ChangeColor(Sphero sphero, String parameter)
         {
