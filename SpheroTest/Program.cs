@@ -73,22 +73,8 @@ namespace SpheroTest
                         sphero.Sleep();
                         break;
                     case "setcolor":
-                        byte r, g, b;
-                        try
-                        {
-                            r = byte.Parse(parameters[1]);
-                            g = byte.Parse(parameters[2]);
-                            b = byte.Parse(parameters[3]);
-                        }
-                        catch 
-                        {
-                            string name = parameters[1];
-                            Color c = Color.FromName(name);
-                            r = c.R;
-                            g = c.G;
-                            b = c.B;
-                        }                     
-                        sphero.SetRGBLEDOutput(r, g, b);
+                        if (parameters.Length < 2) break;
+                        ChangeColor(sphero, parameters[1]);
                         break;
                     case "getresponses":
                         {
@@ -126,6 +112,8 @@ namespace SpheroTest
                         break;
                     case "exit":
                         spheroConnector.Close();
+                        Console.WriteLine("See you soon ... ;) ");
+                        Thread.Sleep(1500);
                         return;
                     case "sendprogram":
                         {
@@ -166,6 +154,40 @@ namespace SpheroTest
                 Console.Write("> ");
                 parameters = Console.ReadLine().Split(new char[] { ' ' });
             }
+        }
+
+        /* Next block should be moved later */
+
+        public static void ChangeColor(Sphero sphero, String parameter)
+        {
+            if (String.IsNullOrEmpty(parameter))
+            {
+                Console.WriteLine("Invalid parameter value - {0}", parameter);
+                return;
+            }
+            if (isHelpParameter(parameter))
+            {
+                Console.WriteLine("Please specify color value, like Red, Green, Blue, etc.");
+                return;
+            }
+            if (sphero == null)
+            {
+                Console.WriteLine("Sphero not connected!");
+                return;
+            }
+            Color c = Color.FromName(parameter);
+            byte r, g, b;
+            r = c.R;
+            g = c.G;
+            b = c.B;
+            sphero.SetRGBLEDOutput(r, g, b);
+        }
+
+        /* Helper Methods */
+
+        private static bool isHelpParameter(String parameter)
+        {
+            return (parameter.Equals("/help")) ? true : false;
         }
     }
 }

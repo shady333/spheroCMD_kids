@@ -8,8 +8,8 @@
     <ProjectGuid>{4FB9701E-4B0E-45FE-86EA-140606AF2FBE}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SpheroTest</RootNamespace>
-    <AssemblyName>SpheroTest</AssemblyName>
+    <RootNamespace>SpheroCMD</RootNamespace>
+    <AssemblyName>SpheroCMD</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>

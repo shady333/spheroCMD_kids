@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpheroTest", "SpheroTest\SpheroTest.csproj", "{4FB9701E-4B0E-45FE-86EA-140606AF2FBE}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpheroCMD", "SpheroTest\SpheroCMD.csproj", "{4FB9701E-4B0E-45FE-86EA-140606AF2FBE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpheroNET", "SpheroNET\SpheroNET.csproj", "{62BA9126-ACBC-4CAF-AA51-65E45F2F2561}"
 EndProject
