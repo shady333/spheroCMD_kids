@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SpheroTest")]
-[assembly: AssemblyDescription("SpheroNET test application")]
+[assembly: AssemblyTitle("SpheroCMDKids")]
+[assembly: AssemblyDescription("Shero Command line application for kids")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SpheroTest")]
+[assembly: AssemblyProduct("SpheroCMDKids")]
 [assembly: AssemblyCopyright("This software is open source")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
