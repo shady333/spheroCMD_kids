@@ -153,6 +153,15 @@ namespace SpheroTest
                             sphero.PerformLevelOneDiagnostics();
                         }
                         break;
+                    case "none":
+                        Console.WriteLine("Welcome to Sphero CMD controll application");
+                        break;
+                    case "help":
+                        Console.WriteLine("HELP will be realized soon.");
+                        break;
+                    default:
+                        Console.WriteLine("Unknown command. Please type 'help' for getting list of available commands.");
+                        break;
                 }
                 Console.Write("> ");
                 parameters = Console.ReadLine().Split(new char[] { ' ' });
